@@ -5,8 +5,8 @@
        <div class="flex">
          <div class="bg-center bg-cover w-16 h-16 mr-2 rounded-full shadow photo"></div>
          <div>
-           <h1 class="font-bold">Kyo Yasuhisa</h1>
-           <p class="text-xs text-justify">フロントエンドエンジニアのKyo Yasuhisaです。Vue.js, Nuxt.jsが大好きです。Pythonも使います。ご依頼はDMからどうぞ。</p>
+           <h1 class="font-bold">Issei Sugihara</h1>
+           <p class="text-xs text-justify">Vue.js,Laravelが得意です。　　現在は都内で客先常駐をし現場経験を積むと同時にスキルアップに努めています。</p>
          </div>
        </div>
        <div class="flex justify-around mt-5 text-xs">
@@ -18,7 +18,7 @@
             Works
           </button>
         </nuxt-link>
-        <a href="http://" target="_blank" rel="noopener noreferrer">
+        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
           <button>
             <fa-layers full-width class="fa-2x block mx-auto mb-1">
               <fa :icon="faTwitter" />
@@ -26,7 +26,7 @@
             Twitter
           </button>
         </a>
-        <a href="https://github.com/si-zerodarkthirty" target="_blank" rel="noopener noreferrer">
+        <a href="https://github.com/sugiharaneet" target="_blank" rel="noopener noreferrer">
           <button>
             <fa-layers full-width class="fa-2x block mx-auto mb-1">
               <fa :icon="faGithub" />
