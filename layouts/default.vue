@@ -1,62 +1,84 @@
 <template>
-  <div>
-    <Nuxt />
-  </div>
+ <div class="font-main flex flex-wrap justify-around">
+   <header class="w-64 h-64">
+     <div class="w-64 mt-24 ml-2 relative md:fixed">
+       <div class="flex">
+         <div class="bg-center bg-cover w-16 h-16 mr-2 rounded-full shadow photo"></div>
+         <div>
+           <h1 class="font-bold">Kyo Yasuhisa</h1>
+           <p class="text-xs text-justify">フロントエンドエンジニアのKyo Yasuhisaです。Vue.js, Nuxt.jsが大好きです。Pythonも使います。ご依頼はDMからどうぞ。</p>
+         </div>
+       </div>
+       <div class="flex justify-around mt-5 text-xs">
+         <nuxt-link to="/">
+          <button>
+            <fa-layers full-width class="fa-2x block mx-auto mb-1">
+              <fa :icon="faCode" />
+            </fa-layers>
+            Works
+          </button>
+        </nuxt-link>
+        <a href="http://" target="_blank" rel="noopener noreferrer">
+          <button>
+            <fa-layers full-width class="fa-2x block mx-auto mb-1">
+              <fa :icon="faTwitter" />
+            </fa-layers>
+            Twitter
+          </button>
+        </a>
+        <a href="https://github.com/si-zerodarkthirty" target="_blank" rel="noopener noreferrer">
+          <button>
+            <fa-layers full-width class="fa-2x block mx-auto mb-1">
+              <fa :icon="faGithub" />
+            </fa-layers>
+            GitHub
+          </button>
+        </a>
+       </div>
+       <input type="text" placeholder="Keywords" class="bg-gray-300 p-2 text-xs rounded w-full mt-5 focus:outline-none" v-model="keyword" @keypress.enter="$router.push('/search/' + keyword)">
+     </div>
+   </header>
+   <main class="w-full mt-10">
+     <nuxt />
+   </main>
+ </div>
 </template>
 
+<script>
+import { faTwitter } from '@fortawesome/free-brands-svg-icons'
+import { faGithub } from '@fortawesome/free-brands-svg-icons'
+import { faCode } from '@fortawesome/free-solid-svg-icons'
+export default {
+  computed: {
+    faTwitter () {
+      return faTwitter
+    },
+    faGithub () {
+      return faGithub
+    },
+    faCode () {
+      return faCode
+    }
+  },
+
+  data() {
+    return {
+      keyword: ''
+    }
+  },
+}
+</script>
+
 <style>
-html {
-  font-family:
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
-  font-size: 16px;
-  word-spacing: 1px;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
+main {
+  max-width: 550px;
 }
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
+.photo {
+  min-width: 4rem; 
+  min-height: 4rem;
+  background-image: url('https://www.aomori-ringo.or.jp/wp-content/themes/aomori-ringo/img/woman/eyebg_center.jpg');
 }
-
-.button--green {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #3b8070;
-  color: #3b8070;
-  text-decoration: none;
-  padding: 10px 30px;
-}
-
-.button--green:hover {
-  color: #fff;
-  background-color: #3b8070;
-}
-
-.button--grey {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #35495e;
-  color: #35495e;
-  text-decoration: none;
-  padding: 10px 30px;
-  margin-left: 15px;
-}
-
-.button--grey:hover {
-  color: #fff;
-  background-color: #35495e;
+button:focus {
+  outline: none;
 }
 </style>
